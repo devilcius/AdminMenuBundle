@@ -1,4 +1,4 @@
-devilciusAdminMenuBundle
+AdminMenuBundle
 =================
 
 This is based on [**AdminBundle**][1] and extends the [**SonataAdminBundle**][2]. It offers the possibility to manage the menu from other bundle.
@@ -11,9 +11,9 @@ Manage menu
 
 The SonataAdminBundle main menu (on top of all Admin pages) is generated with a list of Admin objects.
 
-This bundle extends the menu and allows everyone to modify this menu.
+This bundle extends the menu and allows everyone to modify via the service container.
 
-The admin menu is generated with [**KnpMenu**][4] library. By default it retrieves all admin groups and labels Admin (like default menu renderer).
+The admin menu is generated with [**KnpMenu**][4] library. By default it retrieves all admin groups and labels Admin (like the default menu renderer).
 
 To modify the admin menu just register a listener :
 ```php
@@ -52,19 +52,19 @@ services:
             - { name: kernel.event_listener, event: admin.menu.create, method: createMenu }
 ```
 
-This bundle use a custom MenuItem class `devilcius\AdminMenuBundle\Menu\MenuItem` that extends the `Knp\Menu\MenuItem`. It add new functions (to add dividers, nav headers, ...)
+This bundle use a custom MenuItem class `devilcius\AdminMenuBundle\Menu\MenuItem` that extends the `Knp\Menu\MenuItem`. It add new functions (dividers, nav headers, ...)
 
 
 Controllers used in the the admin menu must extend the AdminMenuController
 
-```
+```php
 use devilcius\AdminMenuBundle\Controller\AdminMenuController as Controller;
 class AuditController extends Controller
 {
 [...]
 ```
 
-[1]: https://github.com/devilcius/AdminMenuBundle
+[1]: https://github.com/vincenttouzet/AdminBundle
 [2]: http://sonata-project.org/bundles/admin/master/doc/index.html
 [3]: https://github.com/devilcius/AdminMenuBundle/blob/master/Resources/doc/installation.md
 [4]: https://github.com/KnpLabs/KnpMenu

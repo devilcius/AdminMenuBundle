@@ -21,6 +21,4 @@ In app/appKernel.php add the following line to register the bundle:
 
 If you have already a bundle that extends the SonataAdminBundle, you must change its parent to devilciusAdminMenuBundle.
 
-3) Configure
-------------
 
