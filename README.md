@@ -35,8 +35,8 @@ class MenuListener
         // ad a nav header
         $menu['Audit']->addNavHeader('SubMenu');
 
-        // add list child
-        $menu['Audit']->addChild('List', array('uri'=>'admin/audit/list'));
+        // add list child (with a route declared in routing.yml)
+        $menu['Auditoría']->addChild('List', array('uri' => $this->router->generate('get_audit_list')));
 
     }
 }
@@ -50,6 +50,7 @@ services:
         class: devilcius\TestBundle\EventListener\MenuListener
         tags:
             - { name: kernel.event_listener, event: admin.menu.create, method: createMenu }
+        arguments: [@router]
 ```
 
 This bundle use a custom MenuItem class `devilcius\AdminMenuBundle\Menu\MenuItem` that extends the `Knp\Menu\MenuItem`. It add new functions (dividers, nav headers, ...)
