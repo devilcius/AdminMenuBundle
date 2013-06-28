@@ -1,0 +1,22 @@
+{
+    "name": "devilcius/admin-menu-bundle",
+    "type": "symfony-bundle",
+    "description": "Extended menu to use with Symfony2 and sonata-admin",
+    "keywords": ["sonata-admin", "bundle"],
+    "homepage": "http://github.com/devilcius/AdminMenuBundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Marcos",
+            "email": "devilcius@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.2"
+    },
+    "autoload": {
+        "psr-0": { "devilcius\\AdminMenuBundle": "" }
+    },
+    "minimum-stability": "dev",
+    "target-dir": "devilcius/AdminMenuBundle"
+}
