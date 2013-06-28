@@ -2,7 +2,7 @@
     "name": "devilcius/admin-menu-bundle",
     "type": "symfony-bundle",
     "description": "Extended menu to use with Symfony2 and sonata-admin",
-    "keywords": ["sonata-admin", "bundle"],
+    "keywords": ["sonata-admin", "bundle", "symfony"],
     "homepage": "https://github.com/devilcius/AdminMenuBundle",
     "license": "MIT",
     "authors": [
