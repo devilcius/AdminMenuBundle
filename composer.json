@@ -3,7 +3,7 @@
     "type": "symfony-bundle",
     "description": "Extended menu to use with Symfony2 and sonata-admin",
     "keywords": ["sonata-admin", "bundle"],
-    "homepage": "http://github.com/devilcius/AdminMenuBundle",
+    "homepage": "https://github.com/devilcius/AdminMenuBundle",
     "license": "MIT",
     "authors": [
         {
