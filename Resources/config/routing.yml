@@ -1,3 +1,0 @@
-devilcius_admin_menu_homepage:
-    pattern:  /hello/{name}
-    defaults: { _controller: devilciusAdminMenuBundle:Default:index }

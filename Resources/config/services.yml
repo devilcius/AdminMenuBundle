@@ -1,7 +1,40 @@
 parameters:
-#    devilcius_admin_menu.example.class: devilcius\AdminMenuBundle\Example
+    devilcius.adminmenu.twig.extension.class: devilcius\AdminMenuBundle\Twig\Extension\devilciusAdminMenuExtension
+    devilcius.adminmenu.menu.renderer.template: "devilciusAdminMenuBundle::menu.html.twig"
+    devilcius.adminmenu.menu.builder.class: devilcius\AdminMenuBundle\Menu\MenuBuilder
+    devilcius.adminmenu.menu.main.class: devilcius\AdminMenuBundle\Menu\MenuItem
+    devilcius.adminmenu.menu.factory.class: devilcius\AdminMenuBundle\Menu\MenuFactory
 
 services:
-#    devilcius_admin_menu.example:
-#        class: %devilcius_admin_menu.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]
+    devilcius.adminmenu.twig.extension:
+        class: %devilcius.adminmenu.twig.extension.class%
+        arguments:
+            - @service_container
+        tags:
+            - { name: twig.extension }
+
+    devilcius.adminmenu.menu.factory:
+        class: %devilcius.adminmenu.menu.factory.class%
+        arguments: [@service_container]
+
+    devilcius.adminmenu.menu.builder:
+        class: %devilcius.adminmenu.menu.builder.class%
+        arguments: [@devilcius.adminmenu.menu.factory, @service_container]
+
+    devilcius.adminmenu.menu.renderer:
+        class: Knp\Menu\Renderer\TwigRenderer
+        arguments: 
+            - @twig
+            - %devilcius.adminmenu.menu.renderer.template%
+            - []
+        tags:
+            - { name: knp_menu.renderer, alias: admin_menu_renderer }
+
+    devilcius.adminmenu.menu.main:
+        class: %devilcius.adminmenu.menu.main.class%
+        factory_service: devilcius.adminmenu.menu.builder
+        factory_method: createMainMenu
+        arguments: [@request]
+        scope: request 
+        tags:
+            - { name: knp_menu.menu, alias: admin_menu_main }
