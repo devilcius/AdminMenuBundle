@@ -36,7 +36,7 @@ class MenuListener
         $menu['Audit']->addNavHeader('SubMenu');
 
         // add list child (with a route declared in routing.yml)
-        $menu['Auditoría']->addChild('List', array('uri' => $this->router->generate('get_audit_list')));
+        $menu['Audit']->addChild('List', array('uri' => $this->router->generate('get_audit_list')));
 
     }
 }
