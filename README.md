@@ -1,6 +1,8 @@
 AdminMenuBundle
 =================
 
+[![Build Status](https://travis-ci.org/devilcius/AdminMenuBundle.png)](https://travis-ci.org/devilcius/AdminMenuBundle)
+
 This is based on [**AdminBundle**][1] and extends the [**SonataAdminBundle**][2]. It offers the possibility to manage the menu from other bundle.
 
 See [**how to install and configure**][3]
