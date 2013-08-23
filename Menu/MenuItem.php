@@ -8,6 +8,7 @@ use Knp\Menu\MenuItem as BaseItem;
 class MenuItem extends BaseItem
 {
     protected $translationDomain = null;
+    protected $roles = null;
     protected $displayLink = true;
     protected $displayLabel = true;
     protected $nbDividers = 0;
@@ -32,6 +33,29 @@ class MenuItem extends BaseItem
     public function setTranslationDomain($translationDomain)
     {
         $this->translationDomain = $translationDomain;
+        return $this;
+    }
+
+    /**
+     * Gets Roles
+     * 
+     * @return [type]
+     */
+    public function getRoles()
+    {
+        return $this->roles;
+    }
+    
+    /**
+     * Sets roles
+     * 
+     * @param [type] $roles roles
+     * 
+     * @return [type]
+     */
+    public function setRoles($roles)
+    {
+        $this->roles = $roles;
         return $this;
     }
 

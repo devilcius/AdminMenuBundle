@@ -56,7 +56,11 @@ class MenuBuilder
         // create menu from admin pool
         $admin_pool = $this->container->get('sonata.admin.pool');
         foreach ($admin_pool->getDashboardGroups() as $group) {
-            $menu->addChild($group['label'], array('translationDomain'=>$group['label_catalogue']));
+            $menu->addChild($group['label'], array(
+                'translationDomain'=>$group['label_catalogue'],
+                'roles'=>$group['roles']
+                ));
+            $menu->setRoles($group['roles']);
             foreach ($group['items'] as $admin) {
                 if ( $admin->hasRoute('list') && $admin->isGranted('LIST') ) {
                     $menu[$group['label']]->addChild($admin->getLabel(), array('admin'=>$admin));
