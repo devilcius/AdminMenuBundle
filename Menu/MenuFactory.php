@@ -78,6 +78,7 @@ class MenuFactory extends RouterAwareFactory implements ContainerAwareInterface
                 'display' => true,
                 'displayChildren' => true,
                 'translationDomain' => 'messages',
+                'roles' => null,
                 'displayLink' => true,
                 'displayLabel' => true,
             ),
@@ -95,9 +96,10 @@ class MenuFactory extends RouterAwareFactory implements ContainerAwareInterface
             ->setDisplay($options['display'])
             ->setDisplayChildren($options['displayChildren'])
             ->setTranslationDomain($options['translationDomain'])
+            ->setRoles($options['roles'])
             ->setDisplayLink($options['displayLink'])
             ->setDisplayLabel($options['displayLabel']);
-
+        
         return $item;
 
         return parent::createItem($name, $options);
